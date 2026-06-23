@@ -53,25 +53,35 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   if (loading) {
     return (
-      <div className="flex h-screen items-center justify-center bg-emerald-950">
-        <div className="text-emerald-400">Carregando...</div>
+      <div className="flex h-screen items-center justify-center bg-margify-950">
+        <div className="flex flex-col items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-margify-500 font-bold text-white">
+            M
+          </div>
+          <div className="text-margify-400">Carregando...</div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="flex h-screen bg-emerald-50">
+    <div className="flex h-screen bg-zinc-50">
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-emerald-900 text-white transition-transform md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-margify-950 text-white transition-transform md:static md:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between px-6 py-5">
-          <h2 className="text-xl font-bold">RestaurantPro</h2>
+          <Link href="/dashboard" className="flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-margify-500 font-bold text-white text-sm">
+              M
+            </div>
+            <span className="text-lg font-bold">MargiFy</span>
+          </Link>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="text-emerald-300 md:hidden"
+            className="text-margify-300 md:hidden"
           >
             <X size={20} />
           </button>
@@ -88,8 +98,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm transition ${
                   ativo
-                    ? "bg-emerald-700 text-white font-medium"
-                    : "text-emerald-200 hover:bg-emerald-800 hover:text-white"
+                    ? "bg-margify-800 text-white font-medium"
+                    : "text-zinc-400 hover:bg-margify-900 hover:text-white"
                 }`}
               >
                 <Icon size={18} />
@@ -99,13 +109,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           })}
         </nav>
 
-        <div className="border-t border-emerald-800 px-3 py-4">
-          <div className="mb-3 px-4 text-xs text-emerald-400 truncate">
+        <div className="border-t border-margify-800 px-3 py-4">
+          <div className="mb-3 px-4 text-xs text-zinc-500 truncate">
             {user?.email}
           </div>
           <button
             onClick={handleLogout}
-            className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm text-emerald-300 transition hover:bg-emerald-800 hover:text-white"
+            className="flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm text-zinc-400 transition hover:bg-margify-900 hover:text-white"
           >
             <LogOut size={18} />
             Sair
@@ -124,10 +134,15 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       {/* Main */}
       <div className="flex flex-1 flex-col overflow-hidden">
         <header className="flex items-center gap-3 border-b bg-white px-6 py-4 md:hidden">
-          <button onClick={() => setSidebarOpen(true)} className="text-emerald-800">
+          <button onClick={() => setSidebarOpen(true)} className="text-zinc-600">
             <Menu size={22} />
           </button>
-          <h2 className="font-bold text-emerald-900">RestaurantPro</h2>
+          <Link href="/dashboard" className="flex items-center gap-2">
+            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-margify-500 font-bold text-white text-xs">
+              M
+            </div>
+            <span className="font-bold text-zinc-800">MargiFy</span>
+          </Link>
         </header>
         <main className="flex-1 overflow-y-auto p-6">{children}</main>
       </div>

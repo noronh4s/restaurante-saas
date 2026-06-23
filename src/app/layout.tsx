@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RestaurantPro - Gestão Inteligente",
+  title: "MargiFy - Inteligência que transforma sua margem",
   description:
-    "SaaS para controle de margem, CMV e estoque do seu restaurante",
+    "SaaS para controle de margem, CMV e estoque do seu restaurante com IA",
 };
 
 export default function RootLayout({

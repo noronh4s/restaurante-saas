@@ -12,6 +12,7 @@ import {
   UtensilsCrossed,
   Warehouse,
   Scan,
+  BarChart3,
   LogOut,
   Menu,
   X,
@@ -23,6 +24,7 @@ const navItems = [
   { href: "/pratos", label: "Pratos", icon: UtensilsCrossed },
   { href: "/estoque", label: "Estoque", icon: Warehouse },
   { href: "/ocr", label: "OCR Nota", icon: Scan },
+  { href: "/relatorios", label: "Relatórios", icon: BarChart3 },
 ];
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {

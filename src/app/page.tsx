@@ -34,7 +34,7 @@ export default function Home() {
               href="/auth/login"
               className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition-all hover:bg-white/90 hover:scale-105"
             >
-              Começar grátis
+              Começar por R$ 9,90
             </Link>
           </div>
         </div>
@@ -74,13 +74,13 @@ export default function Home() {
               href="/auth/login"
               className="group relative inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-medium text-black transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(34,197,94,0.3)]"
             >
-              Começar gratuitamente
+              Começar por R$ 9,90
               <span className="transition-transform group-hover:translate-x-1">
                 →
               </span>
             </Link>
             <span className="text-xs text-white/25">
-              Sem cartão de crédito. Acesso instantâneo.
+              Primeiro mês por R$ 9,90. Depois R$ 79,90/mês.
             </span>
           </div>
         </div>

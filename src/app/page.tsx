@@ -17,7 +17,13 @@ export default function Home() {
             </span>
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-6 sm:flex">
+            <Link
+              href="#precos"
+              className="text-sm text-white/40 transition-colors hover:text-white"
+            >
+              Preços
+            </Link>
             <Link
               href="/auth/login"
               className="rounded-full px-5 py-2 text-sm font-medium text-white/60 transition-colors hover:text-white"
@@ -182,6 +188,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section id="precos" className="scroll-mt-20 border-t border-white/5 py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Preço simples e justo
+            </h2>
+            <p className="mt-3 text-white/30">
+              Comece com tudo que precisa. Cancele quando quiser.
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-md">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-8 ring-1 ring-white/5 transition-all hover:border-[#22c55e]/30 hover:ring-[#22c55e]/20">
+              {/* Badge */}
+              <div className="absolute -top-px left-1/2 -translate-x-1/2">
+                <div className="rounded-b-full bg-[#22c55e]/20 px-6 py-2 text-xs font-medium text-[#22c55e] backdrop-blur">
+                  MAIS POPULAR
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold">MargiFy Pro</h3>
+                <p className="mt-1 text-sm text-white/30">
+                  Tudo que você precisa para controlar seu restaurante.
+                </p>
+
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="text-5xl font-bold tracking-tight">
+                    R$ 9,90
+                  </span>
+                  <span className="text-sm text-white/30">/mês</span>
+                </div>
+
+                <p className="mt-1 text-xs text-white/20">
+                  Primeiro mês promocional. Depois R$ 79,90/mês.
+                </p>
+              </div>
+
+              <Link
+                href="/auth/login"
+                className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-[#22c55e] py-3.5 text-sm font-medium text-black transition-all hover:bg-[#22c55e]/90 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Começar por R$ 9,90 →
+              </Link>
+
+              <ul className="mt-8 space-y-3">
+                {[
+                  "Insumos ilimitados",
+                  "Pratos e fichas técnicas ilimitados",
+                  "Cálculo automático de CMV e margem",
+                  "Controle de estoque completo",
+                  "Dashboard com gráficos",
+                  "OCR para notas fiscais",
+                  "Relatórios de gastos",
+                  "Sugestão inteligente de preço",
+                  "Suporte por email",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/50">
+                    <span className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#22c55e]/10 text-[10px] text-[#22c55e]">
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="border-t border-white/5 py-32">
         <div className="mx-auto max-w-7xl px-6">
@@ -193,13 +270,13 @@ export default function Home() {
                 Pronto para transformar sua margem?
               </h2>
               <p className="mx-auto mt-4 max-w-md text-white/30">
-                Comece agora. Sem burocracia, sem cartão de crédito.
+                Primeiro mês por R$ 9,90. Cancele quando quiser.
               </p>
               <Link
                 href="/auth/login"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#22c55e] px-8 py-4 text-base font-medium text-black transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(34,197,94,0.4)]"
               >
-                Começar gratuitamente →
+                Começar por R$ 9,90 →
               </Link>
             </div>
           </div>
